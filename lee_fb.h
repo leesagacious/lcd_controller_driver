@@ -5,14 +5,23 @@ struct lee_fb_info {
 
 static int lee_fb_probe(struct platform_device *pdev)
 {
-	int ret;
+	int ret = -ENOMEM;
 	struct fb_info *lee_info;
 	struct lee_fb_info *lfi;
 	struct device *dev = &pdev->dev;
+	/*
+		NULL : Do not build device hierarchy
+	*/
+	lee_info = framebuffer_alloc(sizeof(struct lee_fb_info), NULL);
+	if (!le_info)
+		goto f_alloc_failure;
 
 	
 
 	return 0;
+
+f_alloc_failure:
+	return ret;
 }
 
 static struct platform_driver lee_fb_platform_driver = {
