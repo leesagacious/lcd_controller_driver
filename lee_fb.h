@@ -1,4 +1,13 @@
 
+static int lee_fb_probe(struct platform_device *pdev)
+{
+	int ret;
+	struct fb_info *lee_info;
+	struct device *dev = &pdev->dev;
+
+	return 0;
+}
+
 static struct platform_driver lee_fb_platform_driver = {
 	.probe = lee_fb_probe,
 	.remove = lee_fb_remove,
