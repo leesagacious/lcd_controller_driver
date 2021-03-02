@@ -1,9 +1,16 @@
 
+struct lee_fb_info {
+	struct fb_info *info;
+};
+
 static int lee_fb_probe(struct platform_device *pdev)
 {
 	int ret;
 	struct fb_info *lee_info;
+	struct lee_fb_info *lfi;
 	struct device *dev = &pdev->dev;
+
+	
 
 	return 0;
 }
