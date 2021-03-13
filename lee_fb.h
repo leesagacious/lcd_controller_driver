@@ -24,6 +24,10 @@ f_alloc_failure:
 	return ret;
 }
 
+static const struct dev_pm_ops lee_fb_self_pm_ops = {
+
+};
+
 static struct platform_driver lee_fb_platform_driver = {
 	.remove = lee_fb_remove,
 	.driver = {
@@ -33,6 +37,7 @@ static struct platform_driver lee_fb_platform_driver = {
 		*/
 		//.name = "lee_fb",   
 		.of_match_table = lee_fb_dt_ids,
+		.pm = &lee_fb_self_pm_ops,
 	},
 };
 
