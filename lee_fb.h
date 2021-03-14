@@ -1,3 +1,5 @@
+#include <linux/pm.h>
+
 
 struct lee_fb_info {
 	struct fb_info *info;
