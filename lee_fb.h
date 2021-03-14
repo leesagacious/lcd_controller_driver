@@ -24,9 +24,7 @@ f_alloc_failure:
 	return ret;
 }
 
-static const struct dev_pm_ops lee_fb_self_pm_ops = {
-
-};
+static SIMPLE_DEV_PM_OPS(lee_fb_self_pm_ops, lee_fb_self_pm_suspend, lee_fb_self_pm_resume);
 
 static struct platform_driver lee_fb_platform_driver = {
 	.remove = lee_fb_remove,
